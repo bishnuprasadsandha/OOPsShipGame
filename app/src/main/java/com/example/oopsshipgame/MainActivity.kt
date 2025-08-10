@@ -2,17 +2,25 @@ package com.example.oopsshipgame
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.oopsshipgame.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val friendlyDestroyer = Destroyer("Amit")
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.textView.text = "New ViewBinding"
+
+        /*val friendlyDestroyer = Destroyer("Amit")
         val friendlyCarrier = Carrier("sonu")
 
         val enemyDestroyer = Destroyer("Kotliner")
@@ -44,6 +52,6 @@ class MainActivity : AppCompatActivity() {
         //End the Battle by attacking enemy
         enemyDestroyer.takeDamage(friendlyCarrier.launchAerialAttack())
         enemyDestroyer.takeDamage(friendlyDestroyer.shootShel())
-        enemyDestroyer.takeDamage(friendlyDestroyer.shootShel())
+        enemyDestroyer.takeDamage(friendlyDestroyer.shootShel())*/
     }
 }
